@@ -11,5 +11,6 @@ public class ReportsPage extends TestBase  {
 	// Call init
 	
 	// Mathod
+	set web Element 
 	
 }

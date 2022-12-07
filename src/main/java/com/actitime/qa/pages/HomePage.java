@@ -22,6 +22,14 @@ public class HomePage extends TestBase {
 		@FindBy(xpath = "//div[@id='logo_aT']")
 		WebElement actitimeLogo;
 		
+		@FindBy(xpath = "//div[@id='container_users']")
+		WebElement usersIcon;
+		
+		@FindBy(xpath = "//span[contains(@class,'userNameSpan') and contains(text(), 'Klein, Hannah')]")
+		WebElement employeeName;
+		
+		@FindBy(xpath = "//div[contains(@class,'userName nameInfo ellipsis') and contains(text(), 'Hannah Klein')]")
+		WebElement employeeProfile;
 	
 		
 		//initialization
@@ -54,5 +62,24 @@ public class HomePage extends TestBase {
 	         return new ReportsPage();
 			
 		}
+        
+        public UsersPage clickOnUsersLink() {
+			
+        	usersIcon.click();
+	         return new UsersPage();
+			
+		}
+        
+        public UsersPage viewEmployeeProfile() {    		
+    		
+        	employeeName.click();
+    		return new UsersPage();
+    		
+    	}
+        
+        public Boolean validateProfileName() {
+			return employeeProfile.isDisplayed();
+		}
+        
 	
 }
